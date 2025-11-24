@@ -5,15 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 export default function AboutSection() {
   const currentlyPlaying = [
-    '<!-- COPY GOES HERE -->',
-    '<!-- COPY GOES HERE -->',
-    '<!-- COPY GOES HERE -->',
+    'Building QA and observability into HubSpot lifecycle + routing',
+    'Prototyping AI copilots that surface the right GTM context on demand',
+    'Weekends: clay studio, sketching interfaces, long walks with playlists',
   ];
 
   const attributes = [
-    { label: '<!-- COPY GOES HERE -->', value: '<!-- COPY GOES HERE -->' },
-    { label: '<!-- COPY GOES HERE -->', value: '<!-- COPY GOES HERE -->' },
-    { label: '<!-- COPY GOES HERE -->', value: '<!-- COPY GOES HERE -->' },
+    { label: 'Role', value: 'Marketer • Builder • Creative • Human' },
+    { label: 'Focus', value: 'RevOps, Lifecycle, AI tooling, Integrated GTM' },
+    { label: 'Stack', value: 'HubSpot, Glean, Crossbeam, ZoomInfo, Figma' },
   ];
 
   return (
@@ -47,10 +47,13 @@ export default function AboutSection() {
               <CardContent>
                 <div className="space-y-4 text-textMuted leading-relaxed">
                   <p>
-                    COPY GOES HERE
+                    I’m Ben Kvale—a marketer and builder who thrives where systems, storytelling, and execution overlap. My
+                    career has stretched from lifecycle programs and RevOps governance to AI-powered tooling that keeps teams
+                    aligned.
                   </p>
                   <p>
-                    COPY GOES HERE
+                    I like making the complex usable: tighter handoffs, clearer dashboards, and creative experiments that make
+                    go-to-market moves feel intuitive. I’m serious about the work but keep a playful, human edge.
                   </p>
                 </div>
               </CardContent>
@@ -119,7 +122,7 @@ export default function AboutSection() {
                   <span className="text-6xl">👤</span>
                 </div>
                 <p className="text-textMuted text-sm uppercase tracking-wider">
-                  COPY GOES HERE
+                  Player 1: Ben Kvale — calibrated for clarity, creativity, and momentum
                 </p>
               </div>
 

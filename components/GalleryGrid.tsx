@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ReactNode } from 'react';
 
 interface GalleryItem {
@@ -30,7 +31,12 @@ export default function GalleryGrid({ items }: GalleryGridProps) {
           {/* Image placeholder or content */}
           <div className="aspect-square bg-panelHighlight flex items-center justify-center relative overflow-hidden">
             {item.image ? (
-              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover"
+              />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-panelHighlight to-surfaceRetro flex items-center justify-center">
                 <span className="text-textMuted text-sm">Image</span>

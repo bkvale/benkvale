@@ -7,33 +7,33 @@ export default function StudioSection() {
   const galleryItems = [
     {
       id: '1',
-      title: '<!-- COPY GOES HERE -->',
-      tag: 'Media',
+      title: 'Poster studies – retro racing interfaces',
+      tag: 'Design',
     },
     {
       id: '2',
-      title: '<!-- COPY GOES HERE -->',
-      tag: 'Design',
+      title: 'Mixed-media sketches exploring motion + typography',
+      tag: 'Art',
     },
     {
       id: '3',
-      title: '<!-- COPY GOES HERE -->',
-      tag: 'Content',
+      title: 'Clay forms + glazing tests (pottery experiments)',
+      tag: 'Studio',
     },
     {
       id: '4',
-      title: '<!-- COPY GOES HERE -->',
-      tag: 'Media',
+      title: 'Thumbnail drafts for a GTM playbook series',
+      tag: 'Content',
     },
     {
       id: '5',
-      title: '<!-- COPY GOES HERE -->',
-      tag: 'Design',
+      title: 'Daily render practice – chromed-out UI parts',
+      tag: '3D',
     },
     {
       id: '6',
-      title: '<!-- COPY GOES HERE -->',
-      tag: 'Content',
+      title: 'Photography + moodboards that inspire product thinking',
+      tag: 'Inspo',
     },
   ];
 
@@ -46,16 +46,17 @@ export default function StudioSection() {
           viewport={{ once: true }}
           className="text-center space-y-4"
         >
-          <h2 
-            className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Media Library
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-retroMagenta to-transparent mx-auto" />
-          <p className="text-textMuted text-lg max-w-2xl mx-auto">
-            COPY GOES HERE
-          </p>
+        <h2
+          className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
+          Studio Library
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-retroMagenta to-transparent mx-auto" />
+        <p className="text-textMuted text-lg max-w-2xl mx-auto">
+          Experiments from the other side of my brain—visual studies, clay work, and moodboards that keep the GTM work grounded
+          in taste and feel.
+        </p>
         </motion.div>
 
       {/* Gallery Grid */}
