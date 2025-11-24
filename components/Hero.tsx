@@ -1,15 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Button from './ui/Button';
-import Panel from './ui/Panel';
+import { Button } from './ui/button';
+import { Card, CardContent } from './ui/card';
 
 export default function Hero() {
   const identityChips = ['Marketer', 'Builder', 'Creative', 'Human'];
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-4 py-20">
-      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto max-w-7xl grid md:grid-cols-2 gap-12 items-center">
         {/* Left Column */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -44,10 +44,22 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button gamepadKey="A" variant="neon" onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button 
+              variant="default" 
+              size="lg"
+              onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative uppercase tracking-wider"
+            >
+              <span className="absolute -left-8 text-neonBlue font-bold text-lg">[A]</span>
               Enter
             </Button>
-            <Button gamepadKey="B" variant="secondary" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button 
+              variant="secondary" 
+              size="lg"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative uppercase tracking-wider"
+            >
+              <span className="absolute -left-8 text-neonBlue font-bold text-lg">[B]</span>
               Profile
             </Button>
           </div>
@@ -60,7 +72,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <Panel variant="highlight" className="p-8 aspect-square">
+          <Card className="p-8 aspect-square border-neonBlue/30 shadow-glow">
             {/* Animated background pattern */}
             <div className="absolute inset-0 rounded-2xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-neonBlue/10 via-transparent to-retroMagenta/10" />
@@ -119,7 +131,7 @@ export default function Hero() {
                 className="absolute inset-0 w-full h-1 bg-gradient-to-b from-transparent via-neonBlue/50 to-transparent"
               />
             </div>
-          </Panel>
+          </Card>
         </motion.div>
       </div>
     </section>

@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Panel from './ui/Panel';
-import Button from './ui/Button';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Button } from './ui/button';
 import AvatarBuilder from './AvatarBuilder';
 
 type BuilderClass = 'Tech Wiz' | 'Marketing Master' | 'AI Tinkerer' | 'Creative Strategist';
@@ -42,7 +42,7 @@ export default function LabSection() {
 
   return (
     <section id="lab" className="min-h-screen py-20 px-4">
-      <div className="container mx-auto space-y-16">
+      <div className="container mx-auto max-w-7xl space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,10 +61,13 @@ export default function LabSection() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left Panel - Controls */}
-          <Panel variant="retro" className="p-8 space-y-8">
-            <h3 className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-              Customize
-            </h3>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
+                Customize
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-8">
 
             {/* Builder Class Dropdown */}
             <div className="space-y-3">
@@ -87,17 +90,19 @@ export default function LabSection() {
               <label className="text-sm uppercase tracking-wider text-textMuted">Style Vibe</label>
               <div className="grid grid-cols-2 gap-2">
                 {styleVibes.map((vibe) => (
-                  <button
+                  <Button
                     key={vibe}
                     onClick={() => setStyleVibe(vibe)}
-                    className={`px-4 py-3 rounded-xl border transition-all text-sm uppercase tracking-wider ${
+                    variant={styleVibe === vibe ? "default" : "outline"}
+                    size="sm"
+                    className={`uppercase tracking-wider ${
                       styleVibe === vibe
                         ? 'bg-neonBlue/20 border-neonBlue text-neonBlue'
-                        : 'bg-panelHighlight border-chromeEdge/30 text-textRetro hover:border-neonBlue/50'
+                        : ''
                     }`}
                   >
                     {vibe}
-                  </button>
+                  </Button>
                 ))}
               </div>
             </div>
@@ -127,13 +132,15 @@ export default function LabSection() {
               <label className="text-sm uppercase tracking-wider text-textMuted">Hair Color</label>
               <div className="flex gap-3">
                 {hairColors.map((color) => (
-                  <button
+                  <Button
                     key={color}
                     onClick={() => setHairColor(color)}
+                    variant="outline"
+                    size="icon"
                     className={`w-12 h-12 rounded-full border-2 transition-all ${
                       hairColor === color
                         ? 'border-neonBlue scale-110 shadow-glow'
-                        : 'border-chromeEdge/30 hover:border-neonBlue/50'
+                        : ''
                     }`}
                     style={{ backgroundColor: color }}
                   />
@@ -143,14 +150,15 @@ export default function LabSection() {
 
             {/* Action Buttons */}
             <div className="flex gap-4 pt-4">
-              <Button variant="neon" onClick={randomize} className="flex-1">
+              <Button onClick={randomize} className="flex-1 uppercase tracking-wider">
                 Randomize
               </Button>
-              <Button variant="secondary" onClick={reset} className="flex-1">
+              <Button variant="secondary" onClick={reset} className="flex-1 uppercase tracking-wider">
                 Reset
               </Button>
             </div>
-          </Panel>
+            </CardContent>
+          </Card>
 
           {/* Right Panel - Avatar Preview */}
           <motion.div

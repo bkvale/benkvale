@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Card from './ui/Card';
+import { Card, CardContent } from './ui/card';
 
 interface ProjectCardProps {
   title: string;
@@ -24,8 +24,8 @@ export default function ProjectCard({
       transition={{ duration: 0.5 }}
       className={className}
     >
-      <Card hoverGlow>
-        <div className="space-y-4">
+      <Card className="hover:border-neonBlue/50 hover:shadow-glow transition-all duration-300">
+        <CardContent className="space-y-4 pt-6">
           <h3 className="text-xl font-bold text-textPrimary font-display" style={{ fontFamily: 'var(--font-display)' }}>
             {title}
           </h3>
@@ -44,7 +44,7 @@ export default function ProjectCard({
               ))}
             </div>
           )}
-        </div>
+        </CardContent>
       </Card>
     </motion.div>
   );

@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Button from './ui/Button';
-import Panel from './ui/Panel';
+import { Button } from './ui/button';
+import { Card, CardContent } from './ui/card';
 
 export default function ContactSection() {
   return (
@@ -28,7 +28,8 @@ export default function ContactSection() {
         </motion.div>
 
         {/* Contact Panel */}
-        <Panel variant="highlight" className="p-8 space-y-6">
+        <Card className="p-8 space-y-6 border-neonBlue/30 shadow-glow">
+          <CardContent className="space-y-6 p-0">
           {/* Email Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -37,9 +38,9 @@ export default function ContactSection() {
             transition={{ delay: 0.1 }}
           >
             <Button
-              variant="neon"
               onClick={() => window.location.href = 'mailto:<!-- COPY GOES HERE -->'}
-              className="w-full justify-center"
+              className="w-full uppercase tracking-wider"
+              size="lg"
             >
               Send Email
             </Button>
@@ -55,7 +56,8 @@ export default function ContactSection() {
             <Button
               variant="secondary"
               onClick={() => window.open('<!-- COPY GOES HERE -->', '_blank')}
-              className="w-full justify-center"
+              className="w-full uppercase tracking-wider"
+              size="lg"
             >
               Connect on LinkedIn
             </Button>
@@ -91,7 +93,7 @@ export default function ContactSection() {
                 className="flex-1 bg-panelHighlight border border-chromeEdge/30 rounded-xl px-4 py-3 text-textPrimary placeholder:text-textMuted focus:border-neonBlue focus:outline-none focus:ring-2 focus:ring-neonBlue/50 transition-all"
                 disabled
               />
-              <Button variant="secondary" className="px-8" disabled>
+              <Button variant="secondary" className="px-8 uppercase tracking-wider" disabled>
                 Subscribe
               </Button>
             </div>
@@ -99,7 +101,8 @@ export default function ContactSection() {
               COPY GOES HERE
             </p>
           </motion.div>
-        </Panel>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

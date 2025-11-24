@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Panel from './ui/Panel';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 export default function AboutSection() {
   const currentlyPlaying = [
@@ -18,7 +18,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="min-h-screen py-20 px-4">
-      <div className="container mx-auto space-y-16">
+      <div className="container mx-auto max-w-7xl space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,49 +39,61 @@ export default function AboutSection() {
           {/* Left Column */}
           <div className="space-y-8">
             {/* Bio */}
-            <Panel variant="retro" className="p-8">
-              <h3 className="text-2xl font-bold text-textPrimary mb-4 font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-                Bio
-              </h3>
-              <div className="space-y-4 text-textMuted leading-relaxed">
-                <p>
-                  COPY GOES HERE
-                </p>
-                <p>
-                  COPY GOES HERE
-                </p>
-              </div>
-            </Panel>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
+                  Bio
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4 text-textMuted leading-relaxed">
+                  <p>
+                    COPY GOES HERE
+                  </p>
+                  <p>
+                    COPY GOES HERE
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
 
             {/* Currently Playing / Building */}
-            <Panel variant="retro" className="p-8">
-              <h3 className="text-2xl font-bold text-textPrimary mb-6 font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-                Currently Playing / Building
-              </h3>
-              <ul className="space-y-3">
-                {currentlyPlaying.map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 text-textRetro">
-                    <span className="w-2 h-2 rounded-full bg-neonGreen" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Panel>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
+                  Currently Playing / Building
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {currentlyPlaying.map((item, index) => (
+                    <li key={index} className="flex items-center gap-3 text-textRetro">
+                      <span className="w-2 h-2 rounded-full bg-neonGreen" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
 
             {/* Stats / Attributes */}
-            <Panel variant="retro" className="p-8">
-              <h3 className="text-2xl font-bold text-textPrimary mb-6 font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-                Stats / Attributes
-              </h3>
-              <div className="space-y-4">
-                {attributes.map((attr, index) => (
-                  <div key={index} className="flex justify-between items-center py-2 border-b border-panelHighlight last:border-0">
-                    <span className="text-textMuted uppercase tracking-wider text-sm">{attr.label}</span>
-                    <span className="text-neonBlue font-bold">{attr.value}</span>
-                  </div>
-                ))}
-              </div>
-            </Panel>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
+                  Stats / Attributes
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {attributes.map((attr, index) => (
+                    <div key={index} className="flex justify-between items-center py-2 border-b border-panelHighlight last:border-0">
+                      <span className="text-textMuted uppercase tracking-wider text-sm">{attr.label}</span>
+                      <span className="text-neonBlue font-bold">{attr.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Right Column - Portrait/Logo */}
@@ -91,7 +103,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Panel variant="highlight" className="p-8 aspect-square flex items-center justify-center relative overflow-hidden">
+            <Card className="p-8 aspect-square flex items-center justify-center relative overflow-hidden border-neonBlue/30 shadow-glow">
               {/* Retro-tech framing */}
               <div className="absolute inset-0 border-4 border-chromeEdge/30 rounded-2xl" />
               <div className="absolute inset-4 border-2 border-neonBlue/20 rounded-xl" />
@@ -124,7 +136,7 @@ export default function AboutSection() {
                 }}
                 className="absolute inset-0 w-full h-1 bg-gradient-to-b from-transparent via-neonBlue/30 to-transparent"
               />
-            </Panel>
+            </Card>
           </motion.div>
         </div>
       </div>

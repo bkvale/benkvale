@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import SkillRadar from './SkillRadar';
 import ProjectCard from './ProjectCard';
-import Panel from './ui/Panel';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 interface StatBarProps {
   label: string;
@@ -67,7 +67,7 @@ export default function WorkSection() {
 
   return (
     <section id="work" className="min-h-screen py-20 px-4">
-      <div className="container mx-auto space-y-16">
+      <div className="container mx-auto max-w-7xl space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,22 +87,30 @@ export default function WorkSection() {
         {/* Stats Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Skill Radar */}
-          <Panel variant="retro" className="p-8">
-            <h3 className="text-2xl font-bold text-textPrimary mb-6 font-display" style={{ fontFamily: 'var(--font-display)' }}>
-              Attributes
-            </h3>
-            <SkillRadar skills={skills} />
-          </Panel>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-textPrimary font-display" style={{ fontFamily: 'var(--font-display)' }}>
+                Attributes
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <SkillRadar skills={skills} />
+            </CardContent>
+          </Card>
 
           {/* Stat Bars */}
-          <Panel variant="retro" className="p-8 space-y-6">
-            <h3 className="text-2xl font-bold text-textPrimary mb-6 font-display" style={{ fontFamily: 'var(--font-display)' }}>
-              Achievements
-            </h3>
-            {stats.map((stat, index) => (
-              <StatBar key={index} label={stat.label} value={stat.value} max={stat.value > 100 ? stat.value : 100} />
-            ))}
-          </Panel>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-textPrimary font-display" style={{ fontFamily: 'var(--font-display)' }}>
+                Achievements
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {stats.map((stat, index) => (
+                <StatBar key={index} label={stat.label} value={stat.value} max={stat.value > 100 ? stat.value : 100} />
+              ))}
+            </CardContent>
+          </Card>
         </div>
 
         {/* Projects Grid */}
