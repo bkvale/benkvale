@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 import { Section } from './layout/Section';
 import { SectionHeader } from './layout/SectionHeader';
 

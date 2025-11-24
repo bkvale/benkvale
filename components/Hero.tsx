@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from './ui/button';
-import { Card } from './ui/card';
+import { Button } from './ui/Button';
+import { Card } from './ui/Card';
 import { Section } from './layout/Section';
 
 export default function Hero() {

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import SkillRadar from './SkillRadar';
 import ProjectCard from './ProjectCard';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 import { Section } from './layout/Section';
 import { SectionHeader } from './layout/SectionHeader';
 

@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
+import { Button } from './ui/Button';
+import { Card, CardContent } from './ui/Card';
 import { Section } from './layout/Section';
 import { SectionHeader } from './layout/SectionHeader';
 
