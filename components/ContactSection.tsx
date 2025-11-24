@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
+import { Button } from './ui/Button';
+import { Card, CardContent } from './ui/Card';
 
 export default function ContactSection() {
   return (
@@ -13,17 +13,26 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-4"
+          className="text-center space-y-6"
         >
-          <h2
-            className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Invite Player to Party
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-retroMagenta to-transparent mx-auto" />
-          <p className="text-textMuted text-lg">
-            Want to ship a new GTM system, automate the boring parts, or trade notes on creative work? Drop a line and let’s
+          <div className="space-y-4">
+            <div className="inline-block px-4 py-2 bg-surfaceRetro/60 border border-neonGreen/40 rounded text-xs text-neonGreen uppercase tracking-[0.3em] font-mono">
+              &gt; MULTIPLAYER MODE
+            </div>
+            <h2
+              className="text-6xl md:text-7xl font-black text-textPrimary font-display uppercase tracking-tighter"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Let's Connect
+            </h2>
+          </div>
+          <div className="flex justify-center items-center gap-3">
+            <div className="w-12 h-1 bg-gradient-to-r from-neonGreen to-neonBlue" />
+            <span className="text-xs text-neonGreen uppercase tracking-widest font-mono">Player Ready</span>
+            <div className="w-12 h-1 bg-gradient-to-l from-neonGreen to-neonBlue" />
+          </div>
+          <p className="text-textMuted text-base max-w-xl mx-auto">
+            Want to ship a new GTM system, automate the boring parts, or trade notes on creative work? Drop a line and let's
             make it real.
           </p>
         </motion.div>

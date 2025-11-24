@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 
 export default function AboutSection() {
   const currentlyPlaying = [
@@ -23,15 +23,24 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-4"
+          className="text-center space-y-6"
         >
-          <h2 
-            className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Player Profile
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-neonBlue to-transparent mx-auto" />
+          <div className="space-y-4">
+            <div className="inline-block px-4 py-2 bg-surfaceRetro/60 border border-retroMagenta/40 rounded text-xs text-retroMagenta uppercase tracking-[0.3em] font-mono">
+              &gt; PLAYER PROFILE LOADED
+            </div>
+            <h2
+              className="text-6xl md:text-7xl font-black text-textPrimary font-display uppercase tracking-tighter"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              About Ben
+            </h2>
+          </div>
+          <div className="flex justify-center items-center gap-3">
+            <div className="w-12 h-1 bg-gradient-to-r from-retroMagenta to-neonBlue" />
+            <span className="text-xs text-retroMagenta uppercase tracking-widest font-mono">System Overview</span>
+            <div className="w-12 h-1 bg-gradient-to-l from-retroMagenta to-neonBlue" />
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -40,8 +49,8 @@ export default function AboutSection() {
             {/* Bio */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-                  Bio
+                <CardTitle className="text-2xl font-black text-neonGreen font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
+                  &gt; Bio
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -62,8 +71,8 @@ export default function AboutSection() {
             {/* Currently Playing / Building */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-                  Currently Playing / Building
+                <CardTitle className="text-2xl font-black text-neonBlue font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
+                  &gt; Currently Playing
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -81,8 +90,8 @@ export default function AboutSection() {
             {/* Stats / Attributes */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-                  Stats / Attributes
+                <CardTitle className="text-2xl font-black text-retroMagenta font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
+                  &gt; Stats / Attributes
                 </CardTitle>
               </CardHeader>
               <CardContent>

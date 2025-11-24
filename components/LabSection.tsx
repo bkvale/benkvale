@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
+import { Button } from './ui/Button';
 import AvatarBuilder from './AvatarBuilder';
 
 type BuilderClass = 'RevOps Pilot' | 'Automation Engineer' | 'AI Tinkerer' | 'Creative Strategist';

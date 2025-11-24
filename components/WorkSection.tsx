@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import SkillRadar from './SkillRadar';
 import ProjectCard from './ProjectCard';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 
 interface StatBarProps {
   label: string;
@@ -75,16 +75,25 @@ export default function WorkSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center space-y-4"
+        className="text-center space-y-6"
       >
-        <h2
-          className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          Career Stats
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-neonBlue to-transparent mx-auto" />
-        <p className="text-textMuted max-w-2xl mx-auto">
+        <div className="space-y-4">
+          <div className="inline-block px-4 py-2 bg-surfaceRetro/60 border border-neonGreen/40 rounded text-xs text-neonGreen uppercase tracking-[0.3em] font-mono">
+            &gt; CAREER DIAGNOSTIC
+          </div>
+          <h2
+            className="text-6xl md:text-7xl font-black text-textPrimary font-display uppercase tracking-tighter"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Battle Stats
+          </h2>
+        </div>
+        <div className="flex justify-center items-center gap-3">
+          <div className="w-12 h-1 bg-gradient-to-r from-neonBlue to-neonGreen" />
+          <span className="text-xs text-neonGreen uppercase tracking-widest font-mono">Peak Performance Metrics</span>
+          <div className="w-12 h-1 bg-gradient-to-l from-neonBlue to-neonGreen" />
+        </div>
+        <p className="text-textMuted max-w-2xl mx-auto text-sm">
           GTM engineer with a focus on clean data, thoughtful automation, and the creative storytelling that gets teams to adopt
           the systems they depend on.
         </p>
@@ -126,15 +135,22 @@ export default function WorkSection() {
 
       {/* Projects Grid */}
       <div className="space-y-8">
-        <motion.h3
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-textPrimary font-display uppercase tracking-wider"
-          style={{ fontFamily: 'var(--font-display)' }}
+          className="space-y-3"
         >
-          Missions / Objectives
-        </motion.h3>
+          <div className="inline-block px-4 py-2 bg-surfaceRetro/60 border border-neonBlue/40 rounded text-xs text-neonBlue uppercase tracking-[0.3em] font-mono">
+            &gt; ACTIVE MISSIONS
+          </div>
+          <h3
+            className="text-4xl md:text-5xl font-black text-textPrimary font-display uppercase tracking-tighter"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Completed Objectives
+          </h3>
+        </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <ProjectCard
