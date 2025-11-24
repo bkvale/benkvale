@@ -31,7 +31,7 @@ export default function WorkSection() {
   return (
     <Section id="work">
       <section className="py-24 relative bg-black/20">
-        <div className="container mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="flex items-center gap-4 mb-12">
             <Trophy className="w-10 h-10 text-xbox-glow" />
             <div>

@@ -7,7 +7,7 @@ export default function ContactSection() {
   return (
     <Section id="contact">
       <section className="py-24 bg-black/20">
-        <div className="container mx-auto px-6 max-w-2xl">
+        <div className="max-w-2xl mx-auto px-6">
           <div className="flex items-center gap-4 mb-12">
             <Mail className="w-10 h-10 text-xbox-glow" />
             <div>

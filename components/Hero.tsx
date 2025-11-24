@@ -37,8 +37,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="container mx-auto px-6 z-10 pt-24">
-          <div className="max-w-5xl">
+        <div className="max-w-5xl mx-auto px-6 z-10 pt-24">
+          <div>
             <div className="mb-12 space-y-2">
               <div className="inline-block px-4 py-2 bg-xbox-green/20 border border-xbox-glow rounded-full">
                 <span className="font-tech text-sm text-xbox-glow uppercase tracking-wider">

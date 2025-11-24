@@ -12,7 +12,7 @@ export default function LabSection() {
   return (
     <Section id="lab">
       <section className="py-24">
-        <div className="container mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="flex items-center gap-4 mb-12">
             <User className="w-10 h-10 text-xbox-glow" />
             <div>
