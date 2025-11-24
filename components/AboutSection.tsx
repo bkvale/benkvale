@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Section } from './layout/Section';
+import { SectionHeader } from './layout/SectionHeader';
 
 export default function AboutSection() {
   const currentlyPlaying = [
@@ -17,22 +19,20 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="space-y-16">
-        {/* Section Header */}
+    <Section id="about">
+      <div className="w-full max-w-5xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-4"
         >
-          <h2 
-            className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Player Profile
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-neonBlue to-transparent mx-auto" />
+          <SectionHeader
+            title="Player Profile"
+            accentColor="neonBlue"
+          />
         </motion.div>
+
+        <div className="space-y-16">
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left Column */}
@@ -141,7 +141,9 @@ export default function AboutSection() {
             </Card>
           </motion.div>
         </div>
-    </section>
+        </div>
+      </div>
+    </Section>
   );
 }
 

@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import GalleryGrid from './GalleryGrid';
+import { Section } from './layout/Section';
+import { SectionHeader } from './layout/SectionHeader';
 
 export default function StudioSection() {
   const galleryItems = [
@@ -38,30 +40,23 @@ export default function StudioSection() {
   ];
 
   return (
-    <section id="studio" className="space-y-16">
-        {/* Section Header */}
+    <Section id="studio">
+      <div className="w-full max-w-5xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-4"
         >
-        <h2
-          className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          Studio Library
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-retroMagenta to-transparent mx-auto" />
-        <p className="text-textMuted text-lg max-w-2xl mx-auto">
-          Experiments from the other side of my brain—visual studies, clay work, and moodboards that keep the GTM work grounded
-          in taste and feel.
-        </p>
+          <SectionHeader
+            title="Studio Library"
+            subtitle="Experiments from the other side of my brain—visual studies, clay work, and moodboards that keep the GTM work grounded in taste and feel."
+            accentColor="retroMagenta"
+          />
         </motion.div>
 
-      {/* Gallery Grid */}
-      <GalleryGrid items={galleryItems} />
-    </section>
+        <GalleryGrid items={galleryItems} />
+      </div>
+    </Section>
   );
 }
 

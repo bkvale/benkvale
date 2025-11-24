@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import AvatarBuilder from './AvatarBuilder';
+import { Section } from './layout/Section';
+import { SectionHeader } from './layout/SectionHeader';
 
 type BuilderClass = 'RevOps Pilot' | 'Automation Engineer' | 'AI Tinkerer' | 'Creative Strategist';
 type StyleVibe = 'Control Panel' | 'Skate Park' | 'Retro Future' | 'Studio Mode';
@@ -41,28 +43,21 @@ export default function LabSection() {
   ];
 
   return (
-    <section id="lab" className="space-y-16">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center space-y-4"
-      >
-        <h2
-          className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-          style={{ fontFamily: 'var(--font-display)' }}
+    <Section id="lab">
+      <div className="w-full max-w-5xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         >
-          Builder Lab
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-neonGreen to-transparent mx-auto" />
-        <p className="text-textMuted max-w-3xl mx-auto">
-          Like a Skate 3 customizer for GTM builders. Tune the avatar, swap styles, and preview the mix of RevOps, AI, and
-          creative instincts that go into my experiments.
-        </p>
-      </motion.div>
+          <SectionHeader
+            title="Builder Lab"
+            subtitle="Like a Skate 3 customizer for GTM builders. Tune the avatar, swap styles, and preview the mix of RevOps, AI, and creative instincts that go into my experiments."
+            accentColor="neonGreen"
+          />
+        </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
         {/* Left Panel - Controls */}
         <Card className="border-panelHighlight bg-surfaceRetro/70 backdrop-blur-md">
           <CardHeader>
@@ -181,9 +176,10 @@ export default function LabSection() {
             hairColor={hairColor}
             stats={stats}
           />
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

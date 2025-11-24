@@ -3,29 +3,24 @@
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
+import { Section } from './layout/Section';
+import { SectionHeader } from './layout/SectionHeader';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="space-y-16">
-      <div className="max-w-2xl mx-auto space-y-16">
-        {/* Section Header */}
+    <Section id="contact">
+      <div className="w-full max-w-5xl mx-auto px-4">
+        <div className="max-w-2xl mx-auto space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-4"
         >
-          <h2
-            className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Invite Player to Party
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-retroMagenta to-transparent mx-auto" />
-          <p className="text-textMuted text-lg">
-            Want to ship a new GTM system, automate the boring parts, or trade notes on creative work? Drop a line and let’s
-            make it real.
-          </p>
+          <SectionHeader
+            title="Invite Player to Party"
+            subtitle="Want to ship a new GTM system, automate the boring parts, or trade notes on creative work? Drop a line and let's make it real."
+            accentColor="retroMagenta"
+          />
         </motion.div>
 
         {/* Contact Panel */}
@@ -105,8 +100,9 @@ export default function ContactSection() {
           </motion.div>
           </CardContent>
         </Card>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

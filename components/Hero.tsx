@@ -3,16 +3,15 @@
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
+import { Section } from './layout/Section';
 
 export default function Hero() {
   const identityChips = ['Marketer', 'Builder', 'Creative', 'Human'];
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-[85vh] flex items-center"
-    >
-      <div className="mx-auto w-full max-w-6xl grid md:grid-cols-2 gap-16 items-center px-4">
+    <Section id="hero">
+      <div className="relative min-h-[85vh] flex items-center w-full">
+        <div className="mx-auto w-full max-w-5xl grid md:grid-cols-2 gap-16 items-center px-4">
         
         {/* ---------------------- */}
         {/* LEFT COLUMN (MAIN MENU) */}
@@ -147,7 +146,8 @@ export default function Hero() {
             />
           </Card>
         </motion.div>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }

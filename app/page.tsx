@@ -7,8 +7,8 @@ import ContactSection from '@/components/ContactSection';
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto flex max-w-5xl flex-col gap-12 px-4 py-10 md:py-16">
+    <main className="min-h-screen bg-bg text-textPrimary">
+      <div className="flex flex-col gap-16 py-12 md:py-20">
         <Hero />
         <WorkSection />
         <StudioSection />

@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import SkillRadar from './SkillRadar';
 import ProjectCard from './ProjectCard';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Section } from './layout/Section';
+import { SectionHeader } from './layout/SectionHeader';
 
 interface StatBarProps {
   label: string;
@@ -69,27 +71,21 @@ export default function WorkSection() {
   ];
 
   return (
-    <section id="work" className="space-y-16">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center space-y-4"
-      >
-        <h2
-          className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-          style={{ fontFamily: 'var(--font-display)' }}
+    <Section id="work">
+      <div className="w-full max-w-5xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         >
-          Career Stats
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-neonBlue to-transparent mx-auto" />
-        <p className="text-textMuted max-w-2xl mx-auto">
-          GTM engineer with a focus on clean data, thoughtful automation, and the creative storytelling that gets teams to adopt
-          the systems they depend on.
-        </p>
-      </motion.div>
+          <SectionHeader
+            title="Career Stats"
+            subtitle="GTM engineer with a focus on clean data, thoughtful automation, and the creative storytelling that gets teams to adopt the systems they depend on."
+            accentColor="neonBlue"
+          />
+        </motion.div>
 
+        <div className="space-y-16">
       {/* Stats Grid */}
       <div className="grid md:grid-cols-2 gap-8">
         {/* Skill Radar */}
@@ -145,8 +141,10 @@ export default function WorkSection() {
             />
           ))}
         </div>
+        </div>
       </div>
-    </section>
+      </div>
+    </Section>
   );
 }
 
