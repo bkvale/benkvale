@@ -75,7 +75,7 @@ export default function AvatarBuilder({
       <div className="grid grid-cols-2 gap-4 pt-4 border-t border-panelHighlight text-center">
         <div>
           <div className="text-xs uppercase tracking-widest text-textMuted mb-1">Height</div>
-          <div className="text-textRetro">{characterHeight}'</div>
+          <div className="text-textRetro">{characterHeight}′</div>
         </div>
         <div>
           <div className="text-xs uppercase tracking-widest text-textMuted mb-1">Hair</div>

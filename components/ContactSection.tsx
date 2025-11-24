@@ -15,7 +15,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center space-y-4"
         >
-          <h2 
+          <h2
             className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
             style={{ fontFamily: 'var(--font-display)' }}
           >
@@ -23,7 +23,8 @@ export default function ContactSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-retroMagenta to-transparent mx-auto" />
           <p className="text-textMuted text-lg">
-            COPY GOES HERE
+            Want to ship a new GTM system, automate the boring parts, or trade notes on creative work? Drop a line and let’s
+            make it real.
           </p>
         </motion.div>
 
@@ -38,7 +39,7 @@ export default function ContactSection() {
             transition={{ delay: 0.1 }}
           >
             <Button
-              onClick={() => window.location.href = 'mailto:<!-- COPY GOES HERE -->'}
+              onClick={() => window.location.href = 'mailto:ben@benkvale.com'}
               className="w-full uppercase tracking-wider"
               size="lg"
             >
@@ -55,7 +56,7 @@ export default function ContactSection() {
           >
             <Button
               variant="secondary"
-              onClick={() => window.open('<!-- COPY GOES HERE -->', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/benkvale/', '_blank')}
               className="w-full uppercase tracking-wider"
               size="lg"
             >
@@ -89,7 +90,7 @@ export default function ContactSection() {
             <div className="flex gap-3">
               <input
                 type="email"
-                placeholder="<!-- COPY GOES HERE -->"
+                placeholder="Signal boost coming soon"
                 className="flex-1 bg-panelHighlight border border-chromeEdge/30 rounded-xl px-4 py-3 text-textPrimary placeholder:text-textMuted focus:border-neonBlue focus:outline-none focus:ring-2 focus:ring-neonBlue/50 transition-all"
                 disabled
               />
@@ -98,7 +99,8 @@ export default function ContactSection() {
               </Button>
             </div>
             <p className="text-textMuted text-xs">
-              COPY GOES HERE
+              Low-volume dispatches on RevOps experiments, automation recipes, and studio drops. Leave your email when it
+              unlocks.
             </p>
           </motion.div>
           </CardContent>

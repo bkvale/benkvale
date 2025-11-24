@@ -6,18 +6,18 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import AvatarBuilder from './AvatarBuilder';
 
-type BuilderClass = 'Tech Wiz' | 'Marketing Master' | 'AI Tinkerer' | 'Creative Strategist';
-type StyleVibe = 'Control Panel' | 'Comic Panel' | 'Skate Park' | 'Retro Future';
+type BuilderClass = 'RevOps Pilot' | 'Automation Engineer' | 'AI Tinkerer' | 'Creative Strategist';
+type StyleVibe = 'Control Panel' | 'Skate Park' | 'Retro Future' | 'Studio Mode';
 
-const builderClasses: BuilderClass[] = ['Tech Wiz', 'Marketing Master', 'AI Tinkerer', 'Creative Strategist'];
-const styleVibes: StyleVibe[] = ['Control Panel', 'Comic Panel', 'Skate Park', 'Retro Future'];
-const hairColors = ['#000000', '#8B4513', '#FFD700', '#FF69B4']; // Black, Brown, Blonde, Pink
+const builderClasses: BuilderClass[] = ['RevOps Pilot', 'Automation Engineer', 'AI Tinkerer', 'Creative Strategist'];
+const styleVibes: StyleVibe[] = ['Control Panel', 'Skate Park', 'Retro Future', 'Studio Mode'];
+const hairColors = ['#0D1B2A', '#8B4513', '#FFD700', '#FF69B4']; // Navy, Brown, Blonde, Pink
 
 export default function LabSection() {
-  const [builderClass, setBuilderClass] = useState<BuilderClass>('Tech Wiz');
+  const [builderClass, setBuilderClass] = useState<BuilderClass>('RevOps Pilot');
   const [styleVibe, setStyleVibe] = useState<StyleVibe>('Control Panel');
   const [characterHeight, setCharacterHeight] = useState(5.8);
-  const [hairColor, setHairColor] = useState('#000000');
+  const [hairColor, setHairColor] = useState('#0D1B2A');
 
   const randomize = () => {
     setBuilderClass(builderClasses[Math.floor(Math.random() * builderClasses.length)]);
@@ -27,46 +27,54 @@ export default function LabSection() {
   };
 
   const reset = () => {
-    setBuilderClass('Tech Wiz');
+    setBuilderClass('RevOps Pilot');
     setStyleVibe('Control Panel');
     setCharacterHeight(5.8);
-    setHairColor('#000000');
+    setHairColor('#0D1B2A');
   };
 
   const stats = [
-    { label: 'Innovation', value: 85 },
-    { label: 'Execution', value: 90 },
-    { label: 'Strategy', value: 80 },
-    { label: 'Creativity', value: 88 },
+    { label: 'System Design', value: 88 },
+    { label: 'Automation', value: 92 },
+    { label: 'Storytelling', value: 84 },
+    { label: 'Experiment Speed', value: 90 },
   ];
 
   return (
     <section id="lab" className="space-y-16">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center space-y-4"
+      {/* Section Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center space-y-4"
+      >
+        <h2
+          className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
+          style={{ fontFamily: 'var(--font-display)' }}
         >
-          <h2 
-            className="text-5xl md:text-6xl font-bold text-textPrimary font-display uppercase tracking-wider"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Character Creator
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-neonGreen to-transparent mx-auto" />
-        </motion.div>
+          Builder Lab
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-neonGreen to-transparent mx-auto" />
+        <p className="text-textMuted max-w-3xl mx-auto">
+          Like a Skate 3 customizer for GTM builders. Tune the avatar, swap styles, and preview the mix of RevOps, AI, and
+          creative instincts that go into my experiments.
+        </p>
+      </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Left Panel - Controls */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-                Customize
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-8">
+      <div className="grid lg:grid-cols-2 gap-8">
+        {/* Left Panel - Controls */}
+        <Card className="border-panelHighlight bg-surfaceRetro/70 backdrop-blur-md">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-textPrimary font-display uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
+              Customize Loadout
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <p className="text-textMuted text-sm leading-relaxed">
+              Adjust the knobs to match the build you need—ops-heavy, automation-first, or design-forward. Then send it to the
+              arena.
+            </p>
 
             {/* Builder Class Dropdown */}
             <div className="space-y-3">
@@ -110,7 +118,7 @@ export default function LabSection() {
             <div className="space-y-3">
               <div className="flex justify-between">
                 <label className="text-sm uppercase tracking-wider text-textMuted">Height</label>
-                <span className="text-neonGreen font-bold">{characterHeight}'</span>
+                <span className="text-neonGreen font-bold">{characterHeight}′</span>
               </div>
               <input
                 type="range"
@@ -156,25 +164,25 @@ export default function LabSection() {
                 Reset
               </Button>
             </div>
-            </CardContent>
-          </Card>
+          </CardContent>
+        </Card>
 
-          {/* Right Panel - Avatar Preview */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <AvatarBuilder
-              builderClass={builderClass}
-              styleVibe={styleVibe}
-              characterHeight={characterHeight}
-              hairColor={hairColor}
-              stats={stats}
-            />
-          </motion.div>
-        </div>
+        {/* Right Panel - Avatar Preview */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <AvatarBuilder
+            builderClass={builderClass}
+            styleVibe={styleVibe}
+            characterHeight={characterHeight}
+            hairColor={hairColor}
+            stats={stats}
+          />
+        </motion.div>
+      </div>
     </section>
   );
 }
