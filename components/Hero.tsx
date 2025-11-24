@@ -8,8 +8,8 @@ export default function Hero() {
   const identityChips = ['Marketer', 'Builder', 'Creative', 'Human'];
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-4 py-20">
-      <div className="container mx-auto max-w-7xl grid md:grid-cols-2 gap-12 items-center">
+    <section id="hero" className="flex items-center justify-center min-h-[80vh]">
+      <div className="w-full grid md:grid-cols-2 gap-12 items-center">
         {/* Left Column */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}

@@ -6,8 +6,8 @@ import { Card, CardContent } from './ui/card';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="min-h-screen py-20 px-4">
-      <div className="container mx-auto max-w-2xl space-y-16">
+    <section id="contact" className="space-y-16">
+      <div className="max-w-2xl mx-auto space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

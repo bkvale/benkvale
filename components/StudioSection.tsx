@@ -38,8 +38,7 @@ export default function StudioSection() {
   ];
 
   return (
-    <section id="studio" className="min-h-screen py-20 px-4">
-      <div className="container mx-auto max-w-7xl space-y-16">
+    <section id="studio" className="space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,9 +58,8 @@ export default function StudioSection() {
           </p>
         </motion.div>
 
-        {/* Gallery Grid */}
-        <GalleryGrid items={galleryItems} />
-      </div>
+      {/* Gallery Grid */}
+      <GalleryGrid items={galleryItems} />
     </section>
   );
 }

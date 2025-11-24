@@ -17,8 +17,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="min-h-screen py-20 px-4">
-      <div className="container mx-auto max-w-7xl space-y-16">
+    <section id="about" className="space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -139,7 +138,6 @@ export default function AboutSection() {
             </Card>
           </motion.div>
         </div>
-      </div>
     </section>
   );
 }
