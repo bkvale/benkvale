@@ -7,11 +7,11 @@ import { Section } from './layout/Section';
 export default function Hero() {
   return (
     <Section id="hero">
-      <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
+      <section className="min-h-screen flex flex-col justify-center relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1a1a1a_0%,_#0a0a0a_100%)] opacity-60" />
         
         <div className="absolute top-0 left-0 right-0 z-20 bg-black/80 border-b-2 border-xbox-green/50 backdrop-blur-sm">
-          <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-xbox-glow to-xbox-green flex items-center justify-center border-2 border-white/20 shadow-lg shadow-xbox-green/50">
                 <User className="w-6 h-6 text-white" />
@@ -37,15 +37,15 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 z-10 pt-24">
-          <div>
-            <div className="mb-12 space-y-2">
+        <div className="max-w-5xl mx-auto px-6 z-10 pt-24 w-full">
+          <div className="w-full">
+            <div className="mb-12 space-y-2 w-full">
               <div className="inline-block px-4 py-2 bg-xbox-green/20 border border-xbox-glow rounded-full">
                 <span className="font-tech text-sm text-xbox-glow uppercase tracking-wider">
                   ⚡ Player Profile
                 </span>
               </div>
-              <h1 className="font-heading text-7xl md:text-9xl uppercase italic leading-[0.85] text-white drop-shadow-[0_0_30px_rgba(82,176,67,0.3)]">
+              <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl uppercase italic leading-[0.85] text-white drop-shadow-[0_0_30px_rgba(82,176,67,0.3)] break-words">
                 BEN<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-xbox-glow to-xbox-green">KVALE</span>
               </h1>

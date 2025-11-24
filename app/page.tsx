@@ -6,7 +6,7 @@ import ContactSection from '@/components/ContactSection';
 
 export default function Page() {
   return (
-    <main className="relative z-10 flex flex-col gap-12">
+    <main className="relative z-10 flex flex-col gap-12 w-full">
       <Hero />
       <WorkSection />
       <LabSection />
