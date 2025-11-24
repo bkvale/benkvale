@@ -1,153 +1,117 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from './ui/Button';
-import { Card } from './ui/Card';
+import { ChevronRight, Trophy, Star, Zap, User } from 'lucide-react';
 import { Section } from './layout/Section';
 
 export default function Hero() {
-  const identityChips = ['Marketer', 'Builder', 'Creative', 'Human'];
-
   return (
     <Section id="hero">
-      <div className="relative min-h-[85vh] flex items-center w-full">
-        <div className="mx-auto w-full max-w-5xl grid md:grid-cols-2 gap-16 items-center px-4">
+      <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1a1a1a_0%,_#0a0a0a_100%)] opacity-60" />
         
-        {/* ---------------------- */}
-        {/* LEFT COLUMN (MAIN MENU) */}
-        {/* ---------------------- */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="space-y-10"
-        >
-          {/* HUD LABEL */}
-          <div className="tracking-[0.2em] text-xs text-textMuted uppercase opacity-70">
-            Player 1 • Ben Kvale
-          </div>
-
-          {/* Identity Chips */}
-          <div className="flex flex-wrap gap-3">
-            {identityChips.map((chip, index) => (
-              <motion.span
-                key={chip}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.08 }}
-                className="px-3 py-1.5 rounded-full bg-surfaceRetro/80 border border-panelHighlight text-textRetro text-xs uppercase tracking-widest shadow-card hover:border-neonBlue hover:text-neonBlue transition-all duration-300"
-              >
-                {chip}
-              </motion.span>
-            ))}
-          </div>
-
-          {/* Primary Text */}
-          <div className="space-y-4 max-w-lg">
-            <h1 className="text-4xl md:text-5xl font-bold text-textPrimary leading-tight">
-              Designing Systems. Building Tools. Leveling Up GTM.
-            </h1>
-            <p className="text-textMuted text-base leading-relaxed max-w-prose">
-              I build modern marketing engines—combining AI, RevOps, creative problem-solving, and hands-on
-              execution. This is my sandbox for ideas, experiments, and everything I’m learning along the way.
-            </p>
-          </div>
-
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button
-              variant="default"
-              size="lg"
-              onClick={() =>
-                document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
-              }
-              className="relative uppercase tracking-wider pl-10"
-            >
-              <span className="absolute left-3 text-neonBlue font-bold text-lg">[A]</span>
-              Enter
-            </Button>
-
-            <Button
-              variant="secondary"
-              size="lg"
-              onClick={() =>
-                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
-              }
-              className="relative uppercase tracking-wider pl-10"
-            >
-              <span className="absolute left-3 text-neonBlue font-bold text-lg">[B]</span>
-              Profile
-            </Button>
-          </div>
-        </motion.div>
-
-        {/* ---------------------- */}
-        {/* RIGHT COLUMN (PANEL)   */}
-        {/* ---------------------- */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-          className="relative"
-        >
-          <Card className="relative aspect-square p-0 overflow-hidden shadow-card border-panelHighlight bg-surfaceRetro/70 backdrop-blur-md">
-            
-            {/* Background gradient wash */}
-            <div className="absolute inset-0 bg-gradient-to-br from-neonBlue/10 via-transparent to-retroMagenta/10 pointer-events-none" />
-
-            {/* Moving scan texture */}
-            <motion.div
-              animate={{
-                backgroundPosition: ['0% 0%', '100% 100%'],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                repeatType: 'reverse',
-              }}
-              className="absolute inset-0 opacity-20 pointer-events-none"
-              style={{
-                backgroundImage:
-                  'linear-gradient(45deg, transparent 30%, rgba(46,216,247,0.15) 50%, transparent 70%)',
-                backgroundSize: '200% 200%',
-              }}
-            />
-
-            {/* Inner content */}
-            <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 space-y-6">
-              {/* Animated glyph */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.05, 1],
-                  opacity: [0.7, 1, 0.7],
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="w-28 h-28 rounded-full border-4 border-neonBlue/40 bg-neonBlue/10 flex items-center justify-center"
-              >
-                <span className="text-5xl">⚡</span>
-              </motion.div>
-
-              {/* Label / placeholder */}
-              <div className="text-center">
-                <h2 className="text-xl font-bold text-neonBlue">
-                  Systems Over Chaos
-                </h2>
-                <p className="text-textMuted text-sm mt-1">
-                  Building clarity, flow, and momentum into every GTM motion.
-                </p>
+        <div className="absolute top-0 left-0 right-0 z-20 bg-black/80 border-b-2 border-xbox-green/50 backdrop-blur-sm">
+          <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-xbox-glow to-xbox-green flex items-center justify-center border-2 border-white/20 shadow-lg shadow-xbox-green/50">
+                <User className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <div className="font-heading text-xl text-white">Ben Kvale</div>
+                <div className="font-tech text-xs text-xbox-glow flex items-center gap-2">
+                  <span className="flex items-center gap-1">
+                    <Trophy className="w-3 h-3" />
+                    Gamerscore: 9250
+                  </span>
+                  <span>●</span>
+                  <span className="text-green-400">Online</span>
+                </div>
               </div>
             </div>
-
-            {/* Scanning line effect */}
-            <motion.div
-              animate={{ y: ['-150%', '180%'] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-              className="absolute inset-0 w-full h-[2px] bg-gradient-to-b from-transparent via-neonBlue/50 to-transparent pointer-events-none"
-            />
-          </Card>
-        </motion.div>
+            <div className="flex gap-2">
+              <div className="gamer-score-badge px-4 py-2 rounded font-tech text-sm text-xbox-glow">
+                <Star className="w-4 h-4 inline mr-1" />
+                Rep: 4.5/5
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <div className="container mx-auto px-6 z-10 pt-24">
+          <div className="max-w-5xl">
+            <div className="mb-12 space-y-2">
+              <div className="inline-block px-4 py-2 bg-xbox-green/20 border border-xbox-glow rounded-full">
+                <span className="font-tech text-sm text-xbox-glow uppercase tracking-wider">
+                  ⚡ Player Profile
+                </span>
+              </div>
+              <h1 className="font-heading text-7xl md:text-9xl uppercase italic leading-[0.85] text-white drop-shadow-[0_0_30px_rgba(82,176,67,0.3)]">
+                BEN<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-xbox-glow to-xbox-green">KVALE</span>
+              </h1>
+              <p className="font-tech text-gray-400 text-lg">Zone: Minneapolis, MN • Last Seen: Now</p>
+            </div>
+
+            <div className="space-y-3 max-w-2xl" style={{ animationDelay: '0.1s' }}>
+              <a href="#work" className="xbox-blade group flex items-center justify-between p-5 rounded-r-lg cursor-pointer backdrop-blur-sm">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded bg-xbox-green/30 border border-xbox-glow flex items-center justify-center group-hover:shadow-lg group-hover:shadow-xbox-green/50 transition-all">
+                    <Trophy className="w-5 h-5 text-xbox-glow" />
+                  </div>
+                  <div>
+                    <span className="font-heading text-2xl uppercase italic text-white block">Achievements</span>
+                    <span className="font-tech text-xs text-gray-400">View career progress</span>
+                  </div>
+                </div>
+                <ChevronRight className="w-6 h-6 text-xbox-glow opacity-50 group-hover:opacity-100 transition-opacity" />
+              </a>
+
+              <a href="#lab" className="xbox-blade group flex items-center justify-between p-5 rounded-r-lg cursor-pointer backdrop-blur-sm">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded bg-xbox-green/30 border border-xbox-glow flex items-center justify-center group-hover:shadow-lg group-hover:shadow-xbox-green/50 transition-all">
+                    <User className="w-5 h-5 text-xbox-glow" />
+                  </div>
+                  <div>
+                    <span className="font-heading text-2xl uppercase italic text-white block">Customize Avatar</span>
+                    <span className="font-tech text-xs text-gray-400">Edit your profile</span>
+                  </div>
+                </div>
+                <ChevronRight className="w-6 h-6 text-xbox-glow opacity-50 group-hover:opacity-100 transition-opacity" />
+              </a>
+
+              <a href="#contact" className="xbox-blade group flex items-center justify-between p-5 rounded-r-lg cursor-pointer backdrop-blur-sm">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded bg-xbox-green/30 border border-xbox-glow flex items-center justify-center group-hover:shadow-lg group-hover:shadow-xbox-green/50 transition-all">
+                    <Zap className="w-5 h-5 text-xbox-glow" />
+                  </div>
+                  <div>
+                    <span className="font-heading text-2xl uppercase italic text-white block">Send Message</span>
+                    <span className="font-tech text-xs text-gray-400">Connect with player</span>
+                  </div>
+                </div>
+                <ChevronRight className="w-6 h-6 text-xbox-glow opacity-50 group-hover:opacity-100 transition-opacity" />
+              </a>
+            </div>
+
+            <div className="mt-12 p-4 bg-black/50 border border-xbox-green/30 rounded-lg max-w-2xl backdrop-blur-sm">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded bg-xbox-green flex items-center justify-center flex-shrink-0 shadow-lg shadow-xbox-green/50">
+                  <Trophy className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <div className="font-tech text-sm text-xbox-glow font-bold mb-1">ACHIEVEMENT UNLOCKED • 25G</div>
+                  <div className="font-body text-white font-semibold">Portfolio Explorer</div>
+                  <div className="font-tech text-xs text-gray-400">Discovered the profile of Ben Kvale</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Section>
+  );
+}
+
     </Section>
   );
 }

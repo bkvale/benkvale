@@ -1,149 +1,118 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import SkillRadar from './SkillRadar';
-import ProjectCard from './ProjectCard';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
+import { Trophy, Star, Lock, CheckCircle } from 'lucide-react';
 import { Section } from './layout/Section';
-import { SectionHeader } from './layout/SectionHeader';
 
-interface StatBarProps {
-  label: string;
-  value: number;
-  max?: number;
-}
-
-function StatBar({ label, value, max = 100 }: StatBarProps) {
-  return (
-    <div className="space-y-2">
-      <div className="flex justify-between text-sm">
-        <span className="text-textRetro uppercase tracking-wider">{label}</span>
-        <span className="text-neonGreen font-bold">{value}/{max}</span>
-      </div>
-      <div className="h-3 bg-panelHighlight rounded-full overflow-hidden border border-chromeEdge/20">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${(value / max) * 100}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="h-full bg-gradient-to-r from-neonBlue to-neonGreen"
-        />
-      </div>
-    </div>
-  );
-}
+const achievements = [
+  { 
+    name: 'Marketing Mastermind', 
+    description: 'Led successful multi-channel campaigns',
+    gamerscore: 50,
+    unlocked: true,
+    progress: 100
+  },
+  { 
+    name: 'Full Stack Developer', 
+    description: 'Built end-to-end web applications',
+    gamerscore: 75,
+    unlocked: true,
+    progress: 100
+  },
+  { 
+    name: 'Creative Visionary', 
+    description: 'Designed innovative brand experiences',
+    gamerscore: 40,
+    unlocked: true,
+    progress: 100
+  },
+];
 
 export default function WorkSection() {
-  const skills = [
-    { name: 'Strategy', value: 85 },
-    { name: 'Execution', value: 90 },
-    { name: 'Analytics', value: 75 },
-    { name: 'Creative', value: 80 },
-    { name: 'Leadership', value: 85 },
-  ];
-
-  const stats = [
-    { label: 'Lifecycle Reviews', value: 42, max: 50 },
-    { label: 'Automation Routines', value: 68, max: 80 },
-    { label: 'HubSpot Instances', value: 14 },
-    { label: 'Years in GTM', value: 8 },
-  ];
-
-  const projects = [
-    {
-      title: 'GTM Copilot (Glean + HubSpot)',
-      description:
-        'Built an AI workspace that surfaces account intel and campaign context directly in HubSpot, shortening prep time and keeping reps in flow.',
-      tags: ['AI Assist', 'HubSpot', 'Workflow'],
-    },
-    {
-      title: 'Lifecycle OS + RevOps Governance',
-      description:
-        'Rebuilt lifecycle, MQL, and routing logic with guardrails, QA automation, and dashboards so marketing, sales, and CS stay in sync.',
-      tags: ['RevOps', 'Lifecycle', 'QA'],
-    },
-    {
-      title: 'Partner Signal Engine',
-      description:
-        'Connected Crossbeam, ZoomInfo, and intent data to trigger partner-assisted plays and route the right intros at the right time.',
-      tags: ['Integrations', 'Data Signals', 'ABM'],
-    },
-  ];
-
   return (
     <Section id="work">
-      <div className="w-full max-w-5xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <SectionHeader
-            title="Career Stats"
-            subtitle="GTM engineer with a focus on clean data, thoughtful automation, and the creative storytelling that gets teams to adopt the systems they depend on."
-            accentColor="neonBlue"
-          />
-        </motion.div>
+      <section className="py-24 relative bg-black/20">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center gap-4 mb-12">
+            <Trophy className="w-10 h-10 text-xbox-glow" />
+            <div>
+              <h2 className="font-heading text-5xl uppercase italic text-white">Achievements</h2>
+              <p className="font-tech text-xbox-glow text-sm">Career Unlocks & Progress</p>
+            </div>
+          </div>
 
-        <div className="space-y-16">
-      {/* Stats Grid */}
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Skill Radar */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-textPrimary font-display" style={{ fontFamily: 'var(--font-display)' }}>
-              Attributes
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <SkillRadar skills={skills} />
-          </CardContent>
-        </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {achievements.map((achievement, index) => (
+              <div 
+                key={achievement.name}
+                className="relative bg-black/60 border-2 border-xbox-green/50 rounded-lg p-6 hover:border-xbox-glow hover:shadow-lg hover:shadow-xbox-green/30 transition-all cursor-pointer group backdrop-blur-sm"
+              >
+                <div className="absolute top-4 right-4">
+                  {achievement.unlocked ? (
+                    <CheckCircle className="w-6 h-6 text-xbox-glow" />
+                  ) : (
+                    <Lock className="w-6 h-6 text-gray-600" />
+                  )}
+                </div>
 
-        {/* Stat Bars */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-textPrimary font-display" style={{ fontFamily: 'var(--font-display)' }}>
-              Achievements
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            {stats.map((stat, index) => (
-              <StatBar
-                key={index}
-                label={stat.label}
-                value={stat.value}
-                max={stat.max ?? 100}
-              />
+                <div className="mb-4">
+                  <div className="w-16 h-16 mb-4 bg-xbox-green/20 border-2 border-xbox-glow rounded flex items-center justify-center group-hover:shadow-lg group-hover:shadow-xbox-green/50 transition-all">
+                    <Trophy className="w-8 h-8 text-xbox-glow" />
+                  </div>
+                  
+                  <h3 className="font-heading text-xl uppercase italic text-white mb-2 group-hover:text-xbox-glow transition-colors">
+                    {achievement.name}
+                  </h3>
+                  
+                  <p className="text-gray-400 text-sm font-body mb-4">
+                    {achievement.description}
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-tech text-xs text-gray-500 uppercase">Progress</span>
+                    <span className="font-tech text-xs text-xbox-glow font-bold">
+                      {achievement.progress}%
+                    </span>
+                  </div>
+                  
+                  <div className="h-2 bg-black/50 border border-xbox-green/30 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-gradient-to-r from-xbox-green to-xbox-glow transition-all duration-1000"
+                      style={{ width: `${achievement.progress}%` }}
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2 border-t border-white/10">
+                    <div className="flex items-center gap-2">
+                      <Star className="w-4 h-4 text-yellow-500" />
+                      <span className="font-tech text-sm text-white font-bold">
+                        {achievement.gamerscore}G
+                      </span>
+                    </div>
+                    <span className="font-tech text-xs text-gray-500">
+                      {achievement.unlocked ? 'UNLOCKED' : 'LOCKED'}
+                    </span>
+                  </div>
+                </div>
+              </div>
             ))}
-          </CardContent>
-        </Card>
-      </div>
+          </div>
 
-      {/* Projects Grid */}
-      <div className="space-y-8">
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl font-bold text-textPrimary font-display uppercase tracking-wider"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          Missions / Objectives
-        </motion.h3>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-            />
-          ))}
+          <div className="mt-12 p-6 bg-black/60 border-2 border-xbox-green/50 rounded-lg backdrop-blur-sm">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="font-heading text-2xl text-white mb-2">Total Gamerscore</h3>
+                <p className="font-tech text-sm text-gray-400">Achievements completed in this profile</p>
+              </div>
+              <div className="text-right">
+                <div className="text-5xl font-heading text-xbox-glow mb-1">165</div>
+                <div className="font-tech text-xs text-gray-400">3 of 3 unlocked</div>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
-      </div>
+      </section>
     </Section>
   );
 }

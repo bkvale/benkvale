@@ -7,15 +7,19 @@ import ContactSection from '@/components/ContactSection';
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-bg text-textPrimary">
-      <div className="flex flex-col gap-16 py-12 md:py-20">
-        <Hero />
-        <WorkSection />
-        <StudioSection />
-        <LabSection />
-        <AboutSection />
-        <ContactSection />
-      </div>
+    <main className="relative z-10 flex flex-col gap-12">
+      <Hero />
+      <WorkSection />
+      <StudioSection />
+      <LabSection />
+      <AboutSection />
+      <ContactSection />
+      
+      <footer className="py-8 border-t border-white/5 text-center">
+        <p className="font-tech text-xs text-gray-600 uppercase tracking-[0.3em]">
+          © 2024 Ben Kvale // System Status: Optimal
+        </p>
+      </footer>
     </main>
   );
 }
