@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
+import { Button } from './ui/Button';
 import AvatarBuilder from './AvatarBuilder';
 import { Section } from './layout/Section';
 import { SectionHeader } from './layout/SectionHeader';
