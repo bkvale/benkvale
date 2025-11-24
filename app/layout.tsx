@@ -15,8 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "<!-- COPY GOES HERE -->",
-  description: "<!-- COPY GOES HERE -->",
+  title: "COPY GOES HERE",
+  description: "COPY GOES HERE",
 };
 
 export default function RootLayout({
